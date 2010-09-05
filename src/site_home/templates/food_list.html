@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Food List</h2>
+{% for item in object_list %}
+<a href="{{ item.get_absolute_url }}">{{ item.name }}</a> <a href="{% url food_delete id=item.id %}">delete</a>
+<p>
+{% endfor %}
+<a href="{% url food_new %}">New Food</a>
+{% endblock %}

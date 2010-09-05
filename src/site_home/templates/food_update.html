@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">{% csrf_token %}
+<h2>Update Food</h2>
+{{ object }}
+{{ form.as_p }}
+<input type="submit">
+</form>
+<a href="{% url food_view id=object.id %}">Food Item</a>
+{% endblock %}

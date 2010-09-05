@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Food: {{ object.name }}</h2>
+<ul>
+<li>id = {{ object.id }}</li>
+<li>name = {{ object.name }}</li>
+<li>type = {{ object.type }}</li>
+<li>origin = {{ object.origin }}</li>
+</ul>
+<p>
+<a href="{% url food_update id=object.id %}">Update</a> <a href="{% url food_delete id=object.id %}">Delete</a>
+<p>
+<a href="{% url food_list %}">Food List</a> 
+{% endblock %}

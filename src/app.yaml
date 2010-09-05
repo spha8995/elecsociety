@@ -12,9 +12,20 @@ handlers:
 - url: /_ah/queue/deferred
   script: djangoappengine/deferred/handler.py
   login: admin
-
+  
 - url: /media/admin
   static_dir: django/contrib/admin/media/
+  
+- url: /media/
+  static_dir: static/
+
+- url: /favicon.ico
+  static_files: static/favicon.ico
+  upload: static/favicon.ico
+  
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
 
 - url: /.*
   script: djangoappengine/main/main.py
