@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Tutor Listing: {{ object.name }}</h2>
+<ul>
+<li>id = {{ object.id }}</li>
+<li>Tutor name = {{ object.name }}</li>
+<li>Unit Of Study Name = {{ object.unit_of_study_name }}</li>
+<li>Unit Of Study Code = {{ object.unit_of_study_code }}</li>
+<li>Tutor's mark for the Unit Of Study = {{ object.unit_of_study_mark }}</li>
+<li>University = {{ object.university }}</li>
+<li>Tutor's proposed rate = {{ object.rate }}</li>
+</ul>
+<p>
+<a href="{% url tutor_update id=object.id %}">Update Listing</a> <a href="{% url tutor_delete id=object.id %}">Delete Listing</a>
+<p>
+<a href="{% url tutor_list %}">Tutor List</a> 
+{% endblock %}

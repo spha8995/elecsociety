@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Tutor Listings</h2>
+{% for item in object_list %}
+<a href="{{ item.get_absolute_url }}">{{ item.name }}</a> <a href="{% url tutor_delete id=item.id %}">delete listing</a>
+<p>
+{% endfor %}
+<a href="{% url tutor_new %}">New Tutor listing</a>
+{% endblock %}

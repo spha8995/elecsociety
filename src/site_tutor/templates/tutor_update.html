@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">{% csrf_token %}
+<h2>Update Tutor Listing</h2>
+{{ object }}
+{{ form.as_p }}
+<input type="submit">
+</form>
+<a href="{% url tutor_view id=object.id %}">Tutor Listing</a>
+{% endblock %}
